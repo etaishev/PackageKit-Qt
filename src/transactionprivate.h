@@ -79,6 +79,8 @@ protected:
     QString repoValue;
     bool repoEnable;
     QStringList search;
+    QString pubkeyFile;
+    QString keyId;
 
     // Only used for old transactions
     QDateTime timespec;

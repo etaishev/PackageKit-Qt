@@ -184,6 +184,12 @@ void TransactionPrivate::runQueuedTransaction()
     case Transaction::RoleUpgradeSystem:
         reply = p->UpgradeSystem(transactionFlags, upgradeDistroId, upgradeKind);
         break;
+    case Transaction::RoleImportPubkey:
+        reply = p->ImportPubkey(pubkeyFile);
+        break;
+    case Transaction::RoleRemovePubkey:
+        reply = p->RemovePubkey(keyId);
+        break;
     default:
         break;
     }

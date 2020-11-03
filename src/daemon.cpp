@@ -461,6 +461,22 @@ Transaction *Daemon::installSignature(Transaction::SigType type, const QString &
     return ret;
 }
 
+Transaction *Daemon::importPubkey(const QString &file)
+{
+    auto ret = new Transaction;
+    ret->d_ptr->role = Transaction::RoleImportPubkey;
+    ret->d_ptr->pubkeyFile = file;
+    return ret;
+}
+
+Transaction *Daemon::removePubkey(const QString &keyId)
+{
+    auto ret = new Transaction;
+    ret->d_ptr->role = Transaction::RoleRemovePubkey;
+    ret->d_ptr->keyId = keyId;
+    return ret;
+}
+
 Transaction *Daemon::refreshCache(bool force)
 {
     auto ret = new Transaction;

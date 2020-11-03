@@ -602,6 +602,20 @@ public:
     static Transaction *installSignature(Transaction::SigType type, const QString &keyID, const QString &packageID);
 
     /**
+     * \brief Import the GPG pubkey from \p file
+     *
+     * \warning check \sa errorCode() signal to know if it the call has any error
+     */
+    static Transaction *importPubkey(const QString &file);
+
+    /**
+     * \brief Remove the GPG pubkey by \p Id
+     *
+     * \warning check \sa errorCode() signal to know if it the call has any error
+     */
+    static Transaction *removePubkey(const QString &keyId);
+
+    /**
      * Refreshes the package manager's cache
      *
      * \note This method emits \sa changed()

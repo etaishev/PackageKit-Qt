@@ -131,7 +131,9 @@ public:
         RoleGetDetailsLocal,    // Since 0.8.17
         RoleGetFilesLocal,      // Since 0.9.1
         RoleRepoRemove,         // Since 0.9.1
-        RoleUpgradeSystem       // since 1.0.11
+        RoleUpgradeSystem,      // since 1.0.11
+        RoleImportPubkey,       // since 1.0.3
+        RoleRemovePubkey        // since 1.0.3
     };
     Q_ENUM(Role)
     typedef Bitfield Roles;
